@@ -112,7 +112,7 @@ body {
 }
 
 .scale-3 {
-	transform: scale(0.7) rotate(60deg);
+	transform: scale(0.7);
 }
 
 .scale-4 {
@@ -121,4 +121,109 @@ body {
 
 .scale-5 {
 	transform: scale(0.5) rotate(100deg);
+}
+
+.scale-6 {
+	transform: scale(0.4) rotate(120deg);
+}
+
+.scale-7 {
+	transform: scale(0.3) rotate(140deg);
+}
+
+/* Animations */
+@keyframes rotate-anti-clockwise-6 {
+  from {
+    transform: rotate(360deg) scale(0.4);
+  }
+  to {
+    transform: rotate(0deg) scale(0.4);
+  }
+}
+@keyframes rotate-clockwise-5 {
+  from {
+    transform: rotate(0deg) scale(0.5);
+  }
+  to {
+    transform: rotate(360deg) scale(0.5);
+  }
+}
+@keyframes rotate-anti-clockwise-4 {
+  from {
+    transform: rotate(360deg) scale(0.6);
+  }
+  to {
+    transform: rotate(0deg) scale(0.6);
+  }
+}
+@keyframes rotate-clockwise-3 {
+  from {
+    transform: rotate(0deg) scale(0.7);
+  }
+  to {
+    transform: rotate(360deg) scale(0.7);
+  }
+}
+
+.rotating-clockwise-3 {
+  animation: rotate-clockwise-3 20s linear infinite;
+}
+.rotating-anti-clockwise-4 {
+  animation: rotate-anti-clockwise-4 20s linear infinite;
+}
+.rotating-clockwise-5 {
+  animation: rotate-clockwise-5 20s linear infinite;
+}
+.rotating-anti-clockwise-6 {
+  animation: rotate-anti-clockwise-6 20s linear infinite;
+}
+
+/* Petals */
+.petal_wrapper {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 50%;
+	height: 50%;
+	transform: scale(0.7) rotate(-20deg);
+	transform-origin: bottom right;
+}
+
+.petal_wrapper_1 {
+	transform: scale(0.7) rotate(40deg);
+}
+.petal_wrapper_2 {
+	transform: scale(0.7) rotate(100deg);
+}
+.petal_wrapper_3 {
+	transform: scale(0.7) rotate(160deg);
+}
+.petal_wrapper_4 {
+	transform: scale(0.7) rotate(220deg);
+}
+.petal_wrapper_5 {
+	transform: scale(0.7) rotate(280deg);
+}
+
+.petal {
+	width: 100%;
+	height: 100%;
+	border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+	background: #FDA404;
+}
+
+.petal::after, .petal::before {
+  content: '';
+  position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+	background: #F77D0B;
+  transform: rotate(40deg);
+	transform-origin: bottom right;
+}
+
+.petal::before {
+  transform: rotate(20deg);
+	background: #FACC09;
 }
