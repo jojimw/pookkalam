@@ -28,6 +28,8 @@ const showIndicator = () => {
 };
 
 const zoomOut = () => {
+  hideIndicator();
+
   keyframes = [
     { transform: maxZoom, marginTop: maxMargin },
     { transform: minZoom, marginTop: minMargin }
@@ -47,10 +49,10 @@ const zoomIn = () => {
   zoomAni.finished.then(() => showIndicator());
 }
 
-document.addEventListener('scroll', function(e) {
+const onWindowScroll = () => {
   yOff = window.pageYOffset || document.documentElement.scrollTop;
 
-  canZoom = (yOff >= 0 && yOff < ZOOM_THRESHOLD);
+  canZoom = (yOff > 0 && yOff < ZOOM_THRESHOLD);
 
   if (canZoom) {
     if (yOff > lastScrollTop) {
@@ -62,7 +64,6 @@ document.addEventListener('scroll', function(e) {
       if (!zoomOutCalled) {
         zoomOutCalled = true;
         zoomOut();
-        hideIndicator();
       }
     } else {
       // upscroll code
@@ -78,4 +79,6 @@ document.addEventListener('scroll', function(e) {
 
     lastScrollTop = yOff <= 0 ? 0 : yOff;
   }
-});
+}
+
+document.addEventListener('scroll', onWindowScroll);

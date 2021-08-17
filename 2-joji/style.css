@@ -3,6 +3,9 @@ body {
 	height: 150vh;
 }
 
+/***********************
+/* Outer circle styles */
+
 .scroll-indicator {
   position: absolute;
 	height: 50px;
@@ -57,4 +60,68 @@ body {
 
 	transform: scale(3);
 	margin-top: 800px;
+}
+
+/***********************
+/* Inner circle styles */
+
+.cone {
+  width: 0;
+  height: 0;
+  border-left: 250px solid transparent;
+  border-right: 250px solid transparent;
+  border-top: 250px solid #32557f;
+  border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 250px);
+	z-index: 1;
+}
+
+.cone-lvl1 {
+	width: 0;
+  height: 0;
+  border-left: 250px solid transparent;
+  border-right: 250px solid transparent;
+  border-top: 250px solid #32557f;
+  border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 250px);
+}
+
+.outer-cone {
+	position: relative;
+	width: 500px;
+	height: 500px;
+}
+
+.cone-1 {
+	border-top-color: #F77D0B;
+}
+
+.cone-2 {
+	border-top-color: #FACC09;
+	transform: rotate(90deg) translate(125px, -125px);
+}
+
+.cone-3 {
+	border-top-color: #F77D0B;
+	transform: rotate(180deg) translate(0, -250px);
+}
+
+.cone-4 {
+	border-top-color: #FACC09;
+	transform: rotate(-90deg) translate(-125px, -125px);
+}
+
+.outer-cone-1 {
+	position: absolute;
+	width: 75%;
+	height: 75%;
+	transform: rotate(90deg);
+	transform-origin: center center;
+	z-index: 2;
+	top: calc(50% - 187.5px);
+	left: calc(50% - 187.5px);
 }
