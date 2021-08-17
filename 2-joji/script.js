@@ -51,9 +51,11 @@ const zoomIn = () => {
   zoomAni.finished.then(() => showIndicator());
 }
 
-const onWindowScroll = () => {
+const onWindowScroll = async () => {
   yOff = window.pageYOffset || document.documentElement.scrollTop;
-
+  try {
+    await document.getElementById('onam_pattu')?.play()
+  } catch (err) {}
   canZoom = (yOff > 0 && yOff < ZOOM_THRESHOLD);
 
   if (canZoom) {
