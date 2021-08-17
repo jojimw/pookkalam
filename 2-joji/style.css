@@ -51,11 +51,7 @@ body {
 	width: 500px;
 	height: 500px;
 	position: relative;
-	overflow: hidden;
-	border-radius: 50%;
-	border: 1px solid #fff;
 	box-sizing: border-box;
-	background-color: #A5C301;
 	will-change: transform;
 
 	transform: scale(3);
@@ -64,6 +60,17 @@ body {
 
 /***********************
 /* Inner circle styles */
+
+.circle-group {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+}
+
+.circle {
+	border-radius: 50%;
+	overflow: hidden;
+}
 
 .cone {
   width: 0;
@@ -75,25 +82,6 @@ body {
 	position: absolute;
 	top: 0;
 	left: calc(50% - 250px);
-	z-index: 1;
-}
-
-.cone-lvl1 {
-	width: 0;
-  height: 0;
-  border-left: 250px solid transparent;
-  border-right: 250px solid transparent;
-  border-top: 250px solid #32557f;
-  border-radius: 50%;
-	position: absolute;
-	top: 0;
-	left: calc(50% - 250px);
-}
-
-.outer-cone {
-	position: relative;
-	width: 500px;
-	height: 500px;
 }
 
 .cone-1 {
@@ -115,13 +103,22 @@ body {
 	transform: rotate(-90deg) translate(-125px, -125px);
 }
 
-.outer-cone-1 {
-	position: absolute;
-	width: 75%;
-	height: 75%;
-	transform: rotate(90deg);
-	transform-origin: center center;
-	z-index: 2;
-	top: calc(50% - 187.5px);
-	left: calc(50% - 187.5px);
+.scale-1 {
+	transform: scale(0.9) rotate(20deg);
+}
+
+.scale-2 {
+	transform: scale(0.8) rotate(40deg);
+}
+
+.scale-3 {
+	transform: scale(0.7) rotate(60deg);
+}
+
+.scale-4 {
+	transform: scale(0.6) rotate(80deg);
+}
+
+.scale-5 {
+	transform: scale(0.5) rotate(100deg);
 }
