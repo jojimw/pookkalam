@@ -13,7 +13,7 @@ const minZoom = 'scale(1)';
 const maxMargin = '800px';
 const minMargin = '100px';
 
-const colors = ['#A5C500', '#709D01', '#FDA404', '#F77D0B', '#FACC09', '#FFDB7C', '#FFFFA5', '#CF411F', '#F4411F', '#FF8350'].reverse()
+const colors = ['#A5C500', '#709D01', '#FDA404', '#F77D0B', '#FACC09', '#9bb94d', '#8A3016', '#CF411F', '#F4411F', '#FF8350'].reverse()
 
 const zoomOptions = {
   duration: 1000,
@@ -57,8 +57,8 @@ const addPaintBackDropElements = () => {
   const node = document.createElement('div');
   node.style.position = 'absolute';
   const nodeRandom = Math.random();
-  node.style.top = `${Math.random() * 1000}px`;
-  node.style.left = `${Math.random() * 1000}px`;
+  node.style.top = `${Math.random() * 2000}px`;
+  node.style.left = `${Math.random() * 2000}px`;
   node.style.width = `${nodeRandom * 7.5}px`;
   node.style.height = `${nodeRandom * 2.5}px`;
   node.style.borderRadius = `${nodeRandom * 1.25}px`;
@@ -86,7 +86,7 @@ const addPaintBackDropElements = () => {
 
 const getColorSpots = () => {
   let i = 0;
-  while (i < 800) {
+  while (i < 1000) {
     addPaintBackDropElements();
     i += 1;
   }
