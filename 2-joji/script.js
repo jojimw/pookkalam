@@ -4,6 +4,7 @@ let lastScrollTop = 0;
 const ZOOM_THRESHOLD = 300;
 const mainCircle = document.getElementById('main-circle');
 const scrollIndicator = document.getElementById('scroll-indicator');
+const happyOnam = document.getElementById('happy_onam');
 
 let zoomOutCalled = false;
 let zoomInCalled = false;
@@ -29,6 +30,10 @@ const showIndicator = () => {
   scrollIndicator.style.opacity = 1
 };
 
+const showHappyOnam = () => {
+  happyOnam.style.display = 'block';
+};
+
 const zoomOut = () => {
   hideIndicator();
 
@@ -39,7 +44,10 @@ const zoomOut = () => {
 
   const zoomAni = mainCircle.animate(keyframes, zoomOptions);
 
-  zoomAni.finished.then(() => hideIndicator());
+  zoomAni.finished.then(() => {
+    hideIndicator();
+    showHappyOnam();
+  });
 }
 
 const zoomIn = () => {
