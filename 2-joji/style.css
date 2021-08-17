@@ -166,7 +166,34 @@ body {
 }
 
 /***********************
+/* bordered-circle */
+.dark-orange-circle {
+	height: 20px;
+	width: 20px;
+	background-color: var(--dark-orange);
+	border-radius: 50%;
+	position: absolute;
+	top: -220px;
+	left: -23px;
+	border: 5px solid var(--dark-green);
+  }
+
+.light-orange-circle {
+	height: 20px;
+	width: 20px;
+	background-color: var(--light-orange);
+	border-radius: 50%;
+	position: absolute;
+	top: -220px;
+	left: -20px;
+	border: 5px solid var(--dark-green);
+  }
+
+/***********************
 /* Circle scales */
+.scale-0-5 {
+	transform: scale(0.95) rotate(20deg);
+}
 .scale-1 {
 	transform: scale(0.9) rotate(20deg);
 }
@@ -178,6 +205,9 @@ body {
 }
 .scale-4 {
 	transform: scale(0.6) rotate(80deg);
+}
+.scale-5-5 {
+	transform: scale(0.65);
 }
 .scale-5 {
 	transform: scale(0.5) rotate(100deg);
