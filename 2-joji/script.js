@@ -35,7 +35,9 @@ const zoomOut = () => {
     { transform: minZoom, marginTop: minMargin }
   ]
 
-  mainCircle.animate(keyframes, zoomOptions);
+  const zoomAni = mainCircle.animate(keyframes, zoomOptions);
+
+  zoomAni.finished.then(() => hideIndicator());
 }
 
 const zoomIn = () => {

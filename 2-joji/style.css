@@ -3,6 +3,11 @@
 	--dark-green: #709D01;
 	--light-orange: #FDA404;
 	--dark-orange: #F77D0B;
+	--yellow: #FACC09;
+	--light-yellow: #FFDB7C;
+	--lighter-yellow: #FFFFA5;
+
+	--animation-bezier: cubic-bezier(.17,.67,.83,.67);
 }
 
 body {
@@ -161,58 +166,76 @@ body {
 }
 
 /***********************
-/* scale */
+/* Circle scales */
 .scale-1 {
 	transform: scale(0.9) rotate(20deg);
 }
-
 .scale-2 {
 	transform: scale(0.8) rotate(40deg);
 }
-
 .scale-3 {
 	transform: scale(0.7);
 }
-
 .scale-4 {
 	transform: scale(0.6) rotate(80deg);
 }
-
 .scale-5 {
 	transform: scale(0.5) rotate(100deg);
 }
-
 .scale-6 {
 	transform: scale(0.4) rotate(120deg);
 }
-
 .scale-7 {
-	transform: scale(0.3) rotate(140deg);
+	transform: scale(0.3);
+	background-color: var(--dark-green);
+}
+.scale-8 {
+	transform: scale(0.25);
+	background-color: var(--dark-orange);
+}
+.scale-9 {
+	transform: scale(0.225);
+	background-color: var(--light-orange);
+}
+.scale-10 {
+	transform: scale(0.2);
+	background-color: var(--yellow);
+}
+.scale-11 {
+	transform: scale(0.13);
+	background-color: var(--light-yellow);
+	box-shadow: 160px 1px 84px -30px rgba(0,0,0,0.56);
+	-webkit-box-shadow: 160px 1px 84px -30px rgba(0,0,0,0.56);
+	-moz-box-shadow: 160px 1px 84px -30px rgba(0,0,0,0.56);
+}
+.scale-12 {
+	transform: scale(0.08);
+	background-color: var(--lighter-yellow);
 }
 
 /* Animations */
 @keyframes rotate-anti-clockwise-6 {
   from {
-    transform: rotate(360deg) scale(0.4);
+    transform: rotate(420deg) scale(0.4);
   }
   to {
-    transform: rotate(0deg) scale(0.4);
+    transform: rotate(60deg) scale(0.4);
   }
 }
 @keyframes rotate-clockwise-5 {
   from {
-    transform: rotate(0deg) scale(0.5);
+    transform: rotate(40deg) scale(0.5);
   }
   to {
-    transform: rotate(360deg) scale(0.5);
+    transform: rotate(400deg) scale(0.5);
   }
 }
 @keyframes rotate-anti-clockwise-4 {
   from {
-    transform: rotate(360deg) scale(0.6);
+    transform: rotate(380deg) scale(0.6);
   }
   to {
-    transform: rotate(0deg) scale(0.6);
+    transform: rotate(20deg) scale(0.6);
   }
 }
 @keyframes rotate-clockwise-3 {
@@ -225,16 +248,16 @@ body {
 }
 
 .rotating-clockwise-3 {
-  animation: rotate-clockwise-3 20s linear infinite;
+  animation: rotate-clockwise-3 20s var(--animation-bezier) infinite;
 }
 .rotating-anti-clockwise-4 {
-  animation: rotate-anti-clockwise-4 20s linear infinite;
+  animation: rotate-anti-clockwise-4 20s var(--animation-bezier) infinite;
 }
 .rotating-clockwise-5 {
-  animation: rotate-clockwise-5 20s linear infinite;
+  animation: rotate-clockwise-5 20s var(--animation-bezier) infinite;
 }
 .rotating-anti-clockwise-6 {
-  animation: rotate-anti-clockwise-6 20s linear infinite;
+  animation: rotate-anti-clockwise-6 20s var(--animation-bezier) infinite;
 }
 
 /* Petals */
@@ -284,5 +307,5 @@ body {
 
 .petal::before {
   transform: rotate(20deg);
-	background: #FACC09;
+	background: var(--yellow);
 }
