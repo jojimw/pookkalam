@@ -3,9 +3,16 @@
 	--dark-green: #709D01;
 	--light-orange: #FDA404;
 	--dark-orange: #F77D0B;
+
 	--yellow: #FACC09;
 	--light-yellow: #FFDB7C;
 	--lighter-yellow: #FFFFA5;
+
+	--red: #CF411F;
+	--light-red: #F4411F;
+	--lighter-red: #FF8350;
+	--dark-red: #DB4021;
+	--darker-red: #8A3016;
 
 	--animation-bezier: cubic-bezier(.17,.67,.83,.67);
 }
@@ -243,6 +250,7 @@ body {
 	background-color: var(--lighter-yellow);
 }
 
+/**************
 /* Animations */
 @keyframes rotate-anti-clockwise-6 {
   from {
@@ -290,6 +298,7 @@ body {
   animation: rotate-anti-clockwise-6 20s var(--animation-bezier) infinite;
 }
 
+/*************
 /* Petals */
 .petal_wrapper {
 	position: absolute;
@@ -338,4 +347,43 @@ body {
 .petal::before {
   transform: rotate(20deg);
 	background: var(--yellow);
+}
+
+/*****************
+/* Square lamp */
+.square {
+	position: absolute;
+	background-color: var(--lighter-red);
+	width: 100px;
+	height: 100px;
+	top: 200px;
+	left: 200px;
+	transform: scale(2);
+}
+
+.trapezium {
+	position: absolute;
+	border-top: 30px solid var(--red);
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	height: 0;
+	width: 40px;
+}
+.trapezium_1 {
+	transform: rotate(90deg);
+	top: 35px;
+	right: -35px;
+	border-top-color: var(--darker-red);
+}
+.trapezium_2 {
+	transform: rotate(-90deg);
+	top: 35px;
+	right: 35px;
+	border-top-color: var(--dark-red);
+}
+.trapezium_3 {
+	transform: rotate(180deg);
+	top: 70px;
+	right: 0px;
+	border-top-color: var(--light-red);
 }
