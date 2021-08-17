@@ -1,3 +1,10 @@
+:root {
+	--light-green: #A5C500;
+	--dark-green: #709D01;
+	--light-orange: #FDA404;
+	--dark-orange: #F77D0B;
+}
+
 body {
 	background: #ECD3B4;
 	height: 150vh;
@@ -68,41 +75,93 @@ body {
 }
 
 .circle {
-	border-radius: 50%;
+	border-radius: 50% ;
 	overflow: hidden;
 }
 
 .cone {
   width: 0;
   height: 0;
-  border-left: 250px solid transparent;
-  border-right: 250px solid transparent;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
   border-top: 250px solid #32557f;
-  border-radius: 50%;
+  border-radius: 25%;
 	position: absolute;
 	top: 0;
-	left: calc(50% - 250px);
+	left: calc(50% - 125px);
 }
 
+/***********************
+/* border-top-color */
+.light-green {
+	border-top-color: var(--light-green);
+}
+
+.dark-green {
+	border-top-color: var(--dark-green);
+}
+
+.light-orange {
+	border-top-color: var(--light-orange);
+}
+
+.dark-orange {
+	border-top-color: var(--dark-orange);
+}
+
+/***********************
+/* cone-transform */
 .cone-1 {
-	border-top-color: #F77D0B;
+	transform-origin: bottom;
+	transform: rotate(45deg);
 }
 
 .cone-2 {
-	border-top-color: #FACC09;
-	transform: rotate(90deg) translate(125px, -125px);
+	transform-origin: bottom;
+	transform: rotate(90deg);
 }
 
 .cone-3 {
-	border-top-color: #F77D0B;
-	transform: rotate(180deg) translate(0, -250px);
+	transform-origin: bottom;
+	transform: rotate(135deg);
 }
 
 .cone-4 {
-	border-top-color: #FACC09;
-	transform: rotate(-90deg) translate(-125px, -125px);
+	transform-origin: bottom;
+	transform: rotate(180deg);
 }
 
+.cone-5 {
+	transform-origin: bottom;
+	transform: rotate(225deg);
+}
+
+.cone-6 {
+	transform-origin: bottom;
+	transform: rotate(270deg);
+}
+
+.cone-7 {
+	transform-origin: bottom;
+	transform: rotate(315deg);
+}
+
+.cone-8 {
+	transform-origin: bottom;
+	transform: rotate(0deg);
+}
+
+/***********************
+/* shadow */
+.orange-shadow {
+	box-shadow: 0px 0px 5px 5px rgba(247, 125, 11, 0.4)
+}
+.green-shadow {
+	box-shadow: 0px 0px 5px 5px rgba(114, 155, 1, 0.56)
+}
+
+/***********************
+/* scale */
 .scale-1 {
 	transform: scale(0.9) rotate(20deg);
 }
@@ -209,7 +268,7 @@ body {
 	width: 100%;
 	height: 100%;
 	border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
-	background: #FDA404;
+	background: var(--light-orange);
 }
 
 .petal::after, .petal::before {
@@ -218,7 +277,7 @@ body {
 	width: 100%;
 	height: 100%;
 	border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
-	background: #F77D0B;
+	background: var(--dark-orange);
   transform: rotate(40deg);
 	transform-origin: bottom right;
 }
