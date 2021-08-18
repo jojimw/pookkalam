@@ -386,23 +386,6 @@ body {
 	right: 0px;
 	border-top-color: var(--light-red);
 }
-.shadow-container {
-	width: 10px;
-	height: 20px;
-	overflow: hidden;
-}
-.trapezium_shadow {
-	transform: scale(0.1) rotate(-90deg);
-	top: 25px;
-	right: 141px;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 450px 80px 0 80px;
-	border-color: black transparent transparent transparent;
-	opacity: 0.2;
-	z-index: 200;
-}
 
 /********************
 /* Happy onam text */
