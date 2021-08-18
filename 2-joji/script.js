@@ -8,13 +8,14 @@ const happyOnam = document.getElementById('happy_onam');
 
 let zoomOutCalled = false;
 let zoomInCalled = false;
+let wasSongPlayed = false;
 
 const maxZoom = 'scale(3)';
 const minZoom = 'scale(1)';
 const maxMargin = '800px';
 const minMargin = '100px';
 
-const colors = ['#A5C500', '#709D01', '#FDA404', '#F77D0B', '#FACC09', '#9bb94d', '#8A3016', '#CF411F', '#F4411F', '#FF8350'].reverse()
+const colors = ['#A5C500', '#709D01', '#FDA404', '#F77D0B', '#FACC09', '#9bb94d', '#8A3016', '#CF411F', '#F4411F', '#FF8350'];
 
 const zoomOptions = {
   duration: 1000,
@@ -65,26 +66,32 @@ const addPaintBackDropElements = () => {
   const node = document.createElement('div');
   node.style.position = 'absolute';
   const nodeRandom = Math.random();
-  node.style.top = `${Math.random() * 2000}px`;
+  const randomInt = Math.floor(nodeRandom * 10);
+  const nodeColor = colors[randomInt];
+  const nodeWidth = `9px`;
+  const nodeHeight = `2px`;
+  const nodeBorderRad = `1px`;
+  node.style.top = `${nodeRandom * 2000}px`;
   node.style.left = `${Math.random() * 2000}px`;
-  node.style.width = `${nodeRandom * 7.5}px`;
-  node.style.height = `${nodeRandom * 2.5}px`;
-  node.style.borderRadius = `${nodeRandom * 1.25}px`;
-  node.style.backgroundColor = colors[Math.floor(nodeRandom * 10)];
+  node.style.width = nodeWidth;
+  node.style.height = nodeHeight;
+  node.style.borderRadius = nodeBorderRad;
+  node.style.backgroundColor = nodeColor;
+  node.style.transform = 'rotate(90deg)';
   const nodeBefore = document.createElement('div');
   nodeBefore.style.position = 'absolute';
-  nodeBefore.style.width = `${nodeRandom * 7.5}px`;
-  nodeBefore.style.height = `${nodeRandom * 2.5}px`;
-  nodeBefore.style.borderRadius = `${nodeRandom * 1.25}px`
-  nodeBefore.style.backgroundColor = colors[Math.floor(nodeRandom * 10)];
-  nodeBefore.style.transform = 'rotate(-60deg)';
+  nodeBefore.style.width = nodeWidth;
+  nodeBefore.style.height = nodeHeight;
+  nodeBefore.style.borderRadius = nodeBorderRad;
+  nodeBefore.style.backgroundColor = nodeColor;
+  nodeBefore.style.transform = 'rotate(-55deg)';
   const nodeAfter = document.createElement('div');
   nodeAfter.style.position = 'absolute';
-  nodeAfter.style.width = `${nodeRandom * 7.5}px`;
-  nodeAfter.style.height = `${nodeRandom * 2.5}px`;
-  nodeAfter.style.borderRadius = `${nodeRandom * 1.25}px`
-  nodeAfter.style.backgroundColor = colors[Math.floor(nodeRandom * 10)];
-  nodeAfter.style.transform = 'rotate(60deg)';
+  nodeAfter.style.width = nodeWidth;
+  nodeAfter.style.height = nodeHeight;
+  nodeAfter.style.borderRadius = nodeBorderRad;
+  nodeAfter.style.backgroundColor = nodeColor;
+  nodeAfter.style.transform = 'rotate(55deg)';
   node.appendChild(nodeBefore);
   node.appendChild(nodeAfter);
   node.style.zIndex = -1;
@@ -94,7 +101,7 @@ const addPaintBackDropElements = () => {
 
 const getColorSpots = () => {
   let i = 0;
-  while (i < 1000) {
+  while (i < 500) {
     addPaintBackDropElements();
     i += 1;
   }
@@ -103,7 +110,9 @@ const getColorSpots = () => {
 const onWindowScroll = async () => {
   yOff = window.pageYOffset || document.documentElement.scrollTop;
   try {
-    await document.getElementById('onam_pattu')?.play()
+    if (!wasSongPlayed) {
+      await document.getElementById('onam_pattu')?.play();
+    }
   } catch (err) {}
   canZoom = (yOff > 0 && yOff < ZOOM_THRESHOLD);
 
