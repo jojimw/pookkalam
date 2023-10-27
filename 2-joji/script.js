@@ -51,6 +51,16 @@ const zoomOut = () => {
   });
 }
 
+const onScrollIndicatorClick = () => {
+  zoomOut();
+
+  try {
+    if (!wasSongPlayed) {
+      document.getElementById('onam_pattu')?.play();
+    }
+  } catch (err) {}
+}
+
 const zoomIn = () => {
   keyframes = [
     { transform: minZoom, marginTop: minMargin  },

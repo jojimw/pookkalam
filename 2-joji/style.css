@@ -54,6 +54,7 @@ body {
   text-align: center;
   width: 6rem;
 	top: 5rem;
+	cursor: pointer;
 }
 
 .page-wrapper {
